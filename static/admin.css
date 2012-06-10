@@ -1,0 +1,155 @@
+/*
+Auteur: Oliver Michas
+Date de publication: 09-06-2012
+Date d'édition: 09-06-2012
+Version: 0.0.1
+URL: http://www.github.com/OliverMichas/NUadmin
+*/
+
+/* NORMALISATION DU SITE */
+
+    html {
+        font-size: 14px;
+        font-family:Arial;
+        height:100%;
+        line-height:1.5em;
+        background:#efefef}
+        
+    body, form {
+        margin: 0; /*marges mal gérées par ie*/}
+        
+    article,aside,figcaption,figure,footer,header,nav,section {display: block;} /*ie, ce sont des blocs !*/
+
+    a {
+        text-decoration: none; /*suppression du sous-lignage*/}
+        
+    a:focus {
+        outline: thin dotted; /*mauvais rendu de contour sous chrome*/}
+
+    a:hover, a:active {
+        outline: 0; /*suppression du contour de lien*/}
+
+    img {
+        border: 0; /*suppression de la bordure quand liée*/
+        -ms-interpolation-mode: bicubic; /*meilleur rendu des images sous ie7*/}
+
+    legend {
+        border: 0; /*couleur non héritée dans ie*/
+        *margin-left: -7px; /*marges mal gérées par ie*/}
+
+    button, input, select, textarea {
+        font-size: 100%; /*les navigateurs déconnent sur la taille de police*/
+        margin: 0; /*marges mal gérées par ie, ff, safari et chrome*/
+        vertical-align: baseline; /*meilleure lisibilité*/
+        *vertical-align: middle; /*idem*/}
+
+    button, input {
+        line-height: normal; /*corrige gestion de hauteur de ligne de ff*/
+        *overflow: visible;  /*corrige bug d'espacement sous ie*/}
+
+    button, html input[type="button"], input[type="submit"] {
+        cursor: pointer; /*affiche un pointeur*/
+        -webkit-appearance: button; /*permet de styliser les input sous iOS*/}
+
+    input[type="checkbox"], input[type="radio"] {
+        box-sizing: border-box; /*suppression du content-box sous ie */
+        padding: 0; /*corrige padding forcé sour ie*/}
+
+    input[type="submit"]:hover{
+        cursor:pointer}
+
+    textarea {
+        overflow: auto; /* supprime la scrollbar sous ie */
+        vertical-align: top; /*meilleure lisibilité */}
+
+    table {
+        border-collapse: collapse; /*retire les marges*/
+        border-spacing: 0; /*idem*/;}
+
+    .left{float: left;} .right{float: right;}
+
+/* ///// BUTTONS ///// */
+
+.btn{
+	color:#fff;
+	height:32px;
+	padding: 0 1em;
+	line-height:32px;
+	display:block;
+	float:left;
+	background:#075f97;
+	box-shadow: inset 0 0 5px #043350}
+
+.btn:hover{
+	background:#0b7ac1;
+	box-shadow: inset 0 0 5px #075f97}
+
+input[type="submit"].btn{
+	border:0;}
+    
+.btn.right{float:right}
+
+.btn.grey{
+	color:#888;
+	background:#ddd;
+	box-shadow:none}
+
+.partial span{
+	display:none}
+
+.partial:hover span{
+	display:inline-block}
+
+/* ///// INPUTS ///// */
+
+input[type="text"],
+input[type="password"],
+input[type="email"]{
+	padding:8px 4px;}
+
+/* ///// NAVIGATION ///// */
+
+/*ASIDE*/
+
+nav.aside{
+	display:block;
+	float:left;
+	width:20%;
+	background:#ddd;}
+
+/*TOP*/
+
+/* ///// CONTENT BLOCK ///// */
+
+body{
+	width:1024px;
+	margin:64px auto 0;}
+
+.content{
+	float:right;
+	width:79%;
+	background:blue}
+
+/* ///// LOGIN ///// */
+
+body.login{
+	position: absolute;
+	width:330px;
+	height:170px;
+	left:50%;
+	top:50%;
+	margin-left:-165px;
+	margin-top:-85px;}
+
+.login input[type="text"],
+.login input[type="password"]{
+	display:block;
+	width:320px;
+	margin:8px 0 0 0;
+	border:1px solid #ddd;}
+
+.login input[type="password"]{
+	margin-bottom:8px;}
+
+.login input + a{
+	margin-right:1px;}
